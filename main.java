@@ -1,45 +1,42 @@
-import java.util.Random;
+
 
 public class main {
   public static void main(String[] args) throws InterruptedException {
-    // Create engine with new BufferFrame
+    
     RendererEngine engine = new RendererEngine(new BufferFrame());
     engine.setMode("color");
 
     int totalRows = 10;
     int totalCols = 40;
     int frames = 60;
-    Random random = new Random();
 
     FrameManager frameManager = new FrameManager();
     frameManager.refreshRate = 1000;
 
+
+    int centerY = totalRows / 2;
+    int centerX = totalCols / 2;
+    int radius = Math.min(totalRows, totalCols) / 2;
+
+
+    char[] colors = {Pixel.NEGRO, Pixel.BLANCO, Pixel.CYAN, Pixel.MAGENTA};
+
     for (int frame = 0; frame < frames; frame++) {
-      // Reinstantiate engine with new BufferFrame
+
       engine = new RendererEngine(new BufferFrame());
       engine.setMode("color");
+
+   
+      char currentColor = colors[frame % colors.length];
 
       for (int y = 0; y < totalRows; y++) {
         for (int x = 0; x < totalCols; x++) {
           Instruction instr = new Instruction();
           Pixel p = new Pixel();
-          char pixelChar = 'n';
-          int rand = random.nextInt(4);
 
-          switch (rand) {
-            case 0:
-              pixelChar = Pixel.NEGRO;
-              break;
-            case 1:
-              pixelChar = Pixel.BLANCO;
-              break;
-            case 2:
-              pixelChar = Pixel.CYAN;
-              break;
-            case 3:
-              pixelChar = Pixel.MAGENTA;
-              break;
-          }
+       
+          int distanceSquared = (y - centerY) * (y - centerY) + (x - centerX) * (x - centerX);
+          char pixelChar = (distanceSquared <= radius * radius) ? currentColor : ' ';
 
           p.AsciiArray = String.valueOf(pixelChar);
           instr.Color = '#';

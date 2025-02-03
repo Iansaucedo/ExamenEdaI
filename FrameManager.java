@@ -11,12 +11,12 @@ public class FrameManager {
     System.out.println("Fetched frame: " + frame);
   }
 
-  public void Send(Object frame) { // Renamed from send
+  public void Send(Object frame) {
     bufferFrameQueue.add(frame);
     System.out.println("Buffered frame: " + frame);
   }
 
-  public void Receive(Object frame) { // Renamed from recieve
+  public void Receive(Object frame) { 
     this.frame = frame;
     System.out.println("Received frame: " + frame);
   }

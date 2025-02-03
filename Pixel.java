@@ -7,7 +7,7 @@ public class Pixel {
   public static final char CYAN = '+';
   public static final char MAGENTA = '*';
 
-  public String GetPixel() { // Renamed from getpixel()
+  public String GetPixel() {
     if (AsciiArray != null && !AsciiArray.isEmpty()) {
       return AsciiArray;
     } else if (color != null) {
@@ -27,7 +27,7 @@ public class Pixel {
     return " ";
   }
 
-  public String GetColor() { // Renamed from getColor()
+  public String GetColor() { 
     return color;
   }
 }

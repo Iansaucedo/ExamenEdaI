@@ -5,7 +5,7 @@ public class RendererEngine {
     private Object frame;
     private String mode;
     private LinkedList<Instruction> instructionsList = new LinkedList<>();
-    private BufferFrame bufferFrame; // no instantiation here
+    private BufferFrame bufferFrame; 
 
     // New constructor
     public RendererEngine(BufferFrame bufferFrame) {
