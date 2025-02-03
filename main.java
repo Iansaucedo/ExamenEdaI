@@ -10,7 +10,7 @@ public class main {
     int frames = 110;
 
     FrameManager frameManager = new FrameManager();
-    frameManager.refreshRate = 10;
+    frameManager.refreshRate = 20;
 
     int centerY = totalRows / 2;
     int centerX = totalCols / 2;

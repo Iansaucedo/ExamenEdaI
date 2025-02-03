@@ -8,17 +8,17 @@ public class FrameManager {
 
   public void Fetch(Object frame) {
     this.frame = frame;
-    System.out.println("Fetched frame: " + frame);
+
   }
 
   public void Send(Object frame) {
     bufferFrameQueue.add(frame);
-    System.out.println("Buffered frame: " + frame);
+
   }
 
   public void Receive(Object frame) { 
     this.frame = frame;
-    System.out.println("Received frame: " + frame);
+    
   }
 
 }

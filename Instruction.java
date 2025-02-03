@@ -20,6 +20,6 @@ public class Instruction {
   }
 
   public void SendInstruction() {
-    System.out.println("Sending instruction");
+  
   }
 }
