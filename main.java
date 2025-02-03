@@ -51,7 +51,7 @@ public class main {
 
       Frame bufferedFrame = engine.SendFrame();
       if (bufferedFrame != null) {
-        frameManager.send(bufferedFrame);
+        frameManager.Send(bufferedFrame);
         clearScreen();
         new Renderer().Show(bufferedFrame);
       }
