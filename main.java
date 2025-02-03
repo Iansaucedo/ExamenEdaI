@@ -2,7 +2,8 @@ import java.util.Random;
 
 public class main {
   public static void main(String[] args) throws InterruptedException {
-    RendererEngine engine = new RendererEngine();
+    // Create engine with new BufferFrame
+    RendererEngine engine = new RendererEngine(new BufferFrame());
     engine.setMode("color");
 
     int totalRows = 10;
@@ -11,10 +12,11 @@ public class main {
     Random random = new Random();
 
     FrameManager frameManager = new FrameManager();
-    frameManager.refreshRate = 100;
+    frameManager.refreshRate = 1000;
 
     for (int frame = 0; frame < frames; frame++) {
-      engine = new RendererEngine();
+      // Reinstantiate engine with new BufferFrame
+      engine = new RendererEngine(new BufferFrame());
       engine.setMode("color");
 
       for (int y = 0; y < totalRows; y++) {
@@ -23,6 +25,7 @@ public class main {
           Pixel p = new Pixel();
           char pixelChar = 'n';
           int rand = random.nextInt(4);
+
           switch (rand) {
             case 0:
               pixelChar = Pixel.NEGRO;
@@ -37,8 +40,8 @@ public class main {
               pixelChar = Pixel.MAGENTA;
               break;
           }
-          p.AsciiArray = String.valueOf(pixelChar);
 
+          p.AsciiArray = String.valueOf(pixelChar);
           instr.Color = '#';
           boolean isExtended = (x >= 20);
           int posX = isExtended ? x - 20 : x;
