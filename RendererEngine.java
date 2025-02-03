@@ -12,7 +12,7 @@ public class RendererEngine {
     this.frame = frame;
   }
 
-  public void Drawframe() {
+  public void DrawFrame() { // Renamed from Drawframe()
     if (mode != null && !instructionsList.isEmpty()) {
       Frame frameObj = new Frame();
 
@@ -21,38 +21,38 @@ public class RendererEngine {
         frameObj.updatePixel(frameNumber, instr.posX, instr.posY, instr.pixelChar);
       }
 
-      // Send the frame to the buffer
       bufferFrame.addFrame(frameObj);
-      System.out.println("Frame sent to buffer");
+
     } else {
-      System.out.println("RendererEngine mode or instructions not set");
+      System.out.println("Error: RendererEngine mode or instructions not set");
     }
   }
 
-  public void sendFrame() {
-    System.out.println("Sending frame: " + frame);
+  public Frame SendFrame() { // Renamed from sendFrame()
+    if (!bufferFrame.isEmpty()) {
+      return bufferFrame.getFrame();
+    } else {
+      System.out.println("No frame in buffer to send.");
+      return null;
+    }
   }
 
-  public void SelecetRenderMode() {
-    System.out.println("Selected render mode: " + mode);
+  // Added method
+  public void SelectRenderMode() {
+    if (mode != null) {
+      System.out.println("Render mode selected: " + mode);
+    } else {
+      System.out.println("No render mode set.");
+    }
   }
 
-  public void RecieveInstruction(Object instruction) {
+  public void ReceiveInstruction(Object instruction) { // Renamed from RecieveInstruction()
     if (instruction instanceof Instruction) {
       instructionsList.add((Instruction) instruction);
     }
   }
 
-  public void bufferFrame(Object frame) {
-    bufferFrameQueue.add(frame);
-    System.out.println("Buffered frame: " + frame);
-  }
-
   public void setMode(String mode) {
     this.mode = mode;
-  }
-
-  public Frame getBufferedFrame() {
-    return bufferFrame.getFrame();
   }
 }

@@ -1,10 +1,9 @@
 public class Renderer {
   private Object frame;
 
-  // Modified Show method: assigns the frame and prints the combined frame
   public void Show(Object frame) {
     this.frame = frame;
-    System.out.println("Showing frame:");
+
     if (frame instanceof Frame) {
       Frame f = (Frame) frame;
       char[][] combined = f.combineFrames();
@@ -15,8 +14,7 @@ public class Renderer {
         System.out.println();
       }
     } else {
-      System.out.println("Frame is not of type Frame");
+      System.out.println("Critical Error: Invalid frame type.");
     }
   }
-
 }

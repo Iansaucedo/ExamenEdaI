@@ -1,0 +1,47 @@
+@startuml
+class Renderer {
+    -frame
+    +Show(frame)
+}
+
+class FrameManager {
+    -frame
+    +bufferFrame
+    +refreshRate
+    +Fetch(frame)
+    +Send(frame)
+    +Receive(frame)
+}
+
+class RendererEngine {
+    +Node(frame)
+    +Frame
+    +mode
+    +Instructions
+    +DrawFrame()
+    +SendFrame
+    +SelectRenderMode()
+    +ReceiveInstruction(instruction)
+}
+
+class Instruction {
+    +Color
+    +SizeExtension
+    +Position(x, y)
+    +HasColor()
+    +CreateInstruction
+    +SendInstruction
+}
+
+class Pixel {
+    +AsciiArray
+    +color
+    +GetPixel
+    +GetColor
+}
+
+Renderer --> FrameManager
+RendererEngine --> Renderer
+RendererEngine --> Instruction
+RendererEngine --> Pixel
+@enduml

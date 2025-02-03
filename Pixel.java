@@ -2,12 +2,12 @@ public class Pixel {
   public String AsciiArray;
   public String color;
 
-  public static final char NEGRO = '.'; // Ausencia de señal (NEGRO)
-  public static final char BLANCO = '#'; // Máxima intensidad (BLANCO)
-  public static final char CYAN = '+'; // Intensidad media-alta (CYAN)
-  public static final char MAGENTA = '*'; // Intensidad media-alta (MAGENTA)
+  public static final char NEGRO = '.';
+  public static final char BLANCO = '#';
+  public static final char CYAN = '+';
+  public static final char MAGENTA = '*';
 
-  public String getpixel() {
+  public String GetPixel() { // Renamed from getpixel()
     if (AsciiArray != null && !AsciiArray.isEmpty()) {
       return AsciiArray;
     } else if (color != null) {
@@ -27,8 +27,7 @@ public class Pixel {
     return " ";
   }
 
-  public String getColor() {
+  public String GetColor() { // Renamed from getColor()
     return color;
   }
-
 }

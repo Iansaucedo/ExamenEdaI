@@ -11,11 +11,11 @@ public class FrameManager {
     System.out.println("Fetched frame: " + frame);
   }
 
-  public void send(Object frame) {
+  public void Send(Object frame) { // Renamed from send(Object frame)
     System.out.println("Sending frame: " + frame);
   }
 
-  public void recieve(Object frame) {
+  public void Receive(Object frame) { // Renamed from recieve(Object frame)
     this.frame = frame;
     System.out.println("Received frame: " + frame);
   }
@@ -25,7 +25,6 @@ public class FrameManager {
     System.out.println("Buffered frame: " + frame);
   }
 
-  // New method: removes frame from buffer and sends it to the renderer
   public void displayBufferedFrame() {
     if (!bufferFrameQueue.isEmpty()) {
       Frame bufferedFrame = (Frame) bufferFrameQueue.poll();
