@@ -11,6 +11,7 @@ class FrameManager {
     +Fetch(frame)
     +Send(frame)
     +Receive(frame)
+   
 }
 
 class RendererEngine {
@@ -19,7 +20,7 @@ class RendererEngine {
     +mode
     +Instructions
     +DrawFrame()
-    +SendFrame
+    +SendFrame()
     +SelectRenderMode()
     +ReceiveInstruction(instruction)
 }
@@ -29,15 +30,15 @@ class Instruction {
     +SizeExtension
     +Position(x, y)
     +HasColor()
-    +CreateInstruction
-    +SendInstruction
+    +CreateInstruction()
+    +SendInstruction()
 }
 
 class Pixel {
     +AsciiArray
     +color
-    +GetPixel
-    +GetColor
+    +GetPixel()
+    +GetColor()
 }
 
 Renderer --> FrameManager

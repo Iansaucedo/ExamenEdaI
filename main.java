@@ -11,7 +11,7 @@ public class main {
     Random random = new Random();
 
     FrameManager frameManager = new FrameManager();
-    frameManager.refreshRate = 30;
+    frameManager.refreshRate = 100;
 
     for (int frame = 0; frame < frames; frame++) {
       engine = new RendererEngine();
@@ -51,9 +51,9 @@ public class main {
 
       Frame bufferedFrame = engine.SendFrame();
       if (bufferedFrame != null) {
-        frameManager.bufferFrame(bufferedFrame);
+        frameManager.send(bufferedFrame);
         clearScreen();
-        frameManager.displayBufferedFrame();
+        new Renderer().Show(bufferedFrame);
       }
 
       Thread.sleep(frameManager.refreshRate);
