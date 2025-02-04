@@ -6,7 +6,7 @@ public class BufferFrame {
 
   public void addFrame(Frame frame) {
     bufferFrameQueue.add(frame);
-    System.out.println("Buffered frame: " + frame);
+
   }
 
   public Frame getFrame() {

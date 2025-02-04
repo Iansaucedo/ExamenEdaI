@@ -12,7 +12,9 @@ public class Renderer {
           System.out.print(combined[y][x]);
         }
         System.out.println();
+        
       }
+
     } else {
       System.out.println("Critical Error: Invalid frame type.");
     }
