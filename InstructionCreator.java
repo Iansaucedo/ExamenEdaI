@@ -6,13 +6,10 @@ public class InstructionCreator {
     public List<List<Instruction>> createInstructions(int totalRows, int totalCols, int frames, int refreshRate, char[] colors) {
         List<List<Instruction>> allInstructions = new ArrayList<>();
         
-        FrameManager frameManager = new FrameManager();
-        frameManager.refreshRate = refreshRate;
-
         int centerY = totalRows / 2;
         int centerX = totalCols / 2;
         int minRadius = 2;
-        int maxRadius = Math.min(totalRows, totalCols) / 2;
+        int maxRadius = Math.min(totalRows, totalCols) / 1;
 
         for (int frame = 0; frame < frames; frame++) {
             List<Instruction> instructions = new ArrayList<>();
