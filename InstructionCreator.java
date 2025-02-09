@@ -3,9 +3,10 @@ import java.util.List;
 
 public class InstructionCreator {
 
-    public List<List<Instruction>> createInstructions(int totalRows, int totalCols, int frames, int refreshRate, char[] colors) {
+    public List<List<Instruction>> createInstructions(int totalRows, int totalCols, int frames, int refreshRate,
+            char[] colors) {
         List<List<Instruction>> allInstructions = new ArrayList<>();
-        
+
         int centerY = totalRows / 2;
         int centerX = totalCols / 2;
         int minRadius = 2;
@@ -33,7 +34,7 @@ public class InstructionCreator {
                     instr.Color = '#';
                     boolean isExtended = (x >= 20);
                     int posX = isExtended ? x - 20 : x;
-                    instr.CreateInstruction(p, posX, y, isExtended);
+                    instr.createInstruction(p, posX, y, isExtended);
                     engine.ReceiveInstruction(instr);
                     instructions.add(instr);
                 }

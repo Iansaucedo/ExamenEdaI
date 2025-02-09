@@ -7,7 +7,6 @@ public class RendererEngine {
   private LinkedList<Instruction> instructionsList = new LinkedList<>();
   private BufferFrame bufferFrame;
 
-  // New constructor
   public RendererEngine(BufferFrame bufferFrame) {
     this.bufferFrame = bufferFrame;
   }

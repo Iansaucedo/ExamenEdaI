@@ -15,7 +15,7 @@ public class Frame {
         }
     }
 
-    public char[][] combineFrames() {
+    public char[][] frame() {
         char[][] combined = new char[10][40];
         for (int y = 0; y < 10; y++) {
             for (int x = 0; x < 20; x++) {
